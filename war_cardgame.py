@@ -1,8 +1,13 @@
+# import module
 import random
+
 suits = ('Hearts', 'diamonds', 'spades', 'clubs')
 ranks = ('two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten', 'joker', 'queen', 'king', 'ace')
 values = {'two':2, 'three':3, 'four':4, 'five':5, 'six':6, 'seven':7, 'eight':8, 'nine':9, 'ten':10, 'joker':11, 'queen':12, 'king':13, 'ace':14}
+
+
 class card:
+    "creates a card object"
     def __init__(self, suit, rank):
         self.suit = suit
         self.rank = rank
@@ -11,7 +16,9 @@ class card:
     def __str__(self):
         return self.rank + 'of' + self.suit
 
+    
 class deck:
+    "creates a deck object for cards"
     def __init__(self):
         self.all_cards = []
         for suit in suits:
@@ -25,7 +32,9 @@ class deck:
     def deal_one(self):
         return self.all_cards.pop()
 
+    
 class player:
+ "creates a player object"
     def __init__(self, name):
         self.name = name
         self.all_cards = []
